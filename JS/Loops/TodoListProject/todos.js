@@ -42,8 +42,10 @@ while (userInput !== "quit" && userInput !== "q") {
     } else if (userInput === "delete") {
         const index = parseInt(prompt("What would you like to delete? (give me the index)"));
         if (!Number.isNaN(index)) {
-            const deletes = todos.splice(index, 1);
-            console.log(`${deletes[0]} was deleted`);
+            if (!Number > todos.length) {
+                const deletes = todos.splice(index, 1);
+                console.log(`${deletes[0]} was deleted`);
+            } else { console.log("Invalid Index") }
         } else {
             console.log("Unknown Index");
         }
